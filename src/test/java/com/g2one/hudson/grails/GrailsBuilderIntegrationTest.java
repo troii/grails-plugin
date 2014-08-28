@@ -179,7 +179,7 @@ public class GrailsBuilderIntegrationTest extends HudsonTestCase {
         FreeStyleProject job = job = createFreeStyleProject();
         job.getBuildersList().add(builder);
         FreeStyleBuild build = job.scheduleBuild2(0).get();
-        String defaultWorkDir = build.getWorkspace().toURI().getPath() + "/target";
+        String defaultWorkDir = build.getWorkspace().toURI().getPath() + "target";
 
         assertEcho(logs(build), "-Dgrails.work.dir=" + defaultWorkDir + " test-app");
     }
